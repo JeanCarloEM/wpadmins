@@ -1,0 +1,75 @@
+/*
+ * -----------------------------------------------------------------------------
+ * LICENCE: GNU LESSER GENERAL PUBLIC LICENSE version 3 (ou posterior)
+ * -----------------------------------------------------------------------------
+ * @package   Grafittano
+ * @author    Jean Carlo de Elias Moreira | http://www.jeancarloem.com
+ * @copyright (c) 2014 Jean Carlo de Elias Moreira | http://www.jeancarloem.com
+ * @license   http://www.gnu.org/licenses/lgpl.html
+ * @link      http://opensource.jeancarloem.com/Grafittano, https://github.com/JeanCarloEM/Grafittano
+ */
+
+$font                       : "Noto Sans", "Sans-Serif";
+$AlturaLinhaAMais           : .5;
+$barraEsquerdaFechada       : 56px;
+$MasterHeaderHeight         : calc(48px + 7px);
+
+$font-size                  : 1ev;
+
+$HerderMid                  : 3.5em;
+$HerderMestre               : 3.5em;
+$HeaderPrincipal            : 6.7em;
+$HeaderPrincipalMin         : 3.5em;
+
+$article_distance_top       : 4em;
+
+$article_width              : 720px;
+$article_width2             : 960px;
+
+// CORES
+$bkGeral                    : #eee url('../img/bg.png') repeat !important;
+$bkAtigo                    : #fff;
+$bkAtigoS                   : #fff;
+$article_shadown            : #c9c9c9;
+
+$cor_search_background      : #444;
+
+$cor_bordas_tabelas         : #606060;
+$cor_titulo_tabelas         : #777;
+$cor_letra_titulo_tabelas   : #fff;
+$cor_zebra_tabelas          : #dfdfdf;
+
+$cor_article_sequencial     : #bfbfbf;
+$cor_article_sequencialBar  : #2b92db;
+
+$cor_barra_modificado       : #eee;
+$cor_barra_modificado_letra : #999;
+
+$cor_under_titulo           : #ccc;
+$cor_blockquote_lados       : #2b92db;
+
+$cor_slide_show_bk          : #555;
+$cor_slide_show_bk_hover    : #2b92db;
+$cor_slide_show_bk_active   : orange;
+$cor_slide_show_letra       : #fff;
+
+// COR PADRÃO DO TEXTO
+$cor_texto                  : #222;
+$cor_sublinhado             : #333;
+
+$cor_siteTitle              : #555;
+
+$cor_linkC                  : #777;
+$cor_linkC_over             : #2b92db;
+$cor_linkC_active           : orange;
+$cor_linkC_visitado         : #7f7f7f;
+
+$cor_link                   : #2b92db;
+$cor_link_over              : orange;
+$cor_link_active            : red;
+$cor_link_visitado          : yelow;
+$cor_link_simbol            : #999;
+
+$cor_headermaster_over      : #2b92db;
+$cor_headermaster_active    : orange;
+$cor_headermaster_text      : #eee;    

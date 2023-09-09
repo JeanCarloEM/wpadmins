@@ -1,0 +1,572 @@
+@import "_mixins.scss";
+@import "_variaveis.scss";
+
+body,
+.metabox-location-advanced.postbox-container{
+  .action{
+    cursor: pointer;
+    border: none;
+    background: transparent;
+
+    &:before,&:after{
+      font-size: 1.3em;
+    }
+
+    &:hover{
+      color: red;
+    }
+  }
+
+  table{
+    &.list{
+      tr{
+        td{
+          padding: .5em 1em;
+          border: 1px solid rgba(0,0,0,.5);
+          border-right: none;
+
+          &:last-of-type{
+            border-right: 1px solid rgba(0,0,0,.5);
+          }
+
+          &.action_col{
+            white-space: nowrap;
+            > *{
+              display: inline-block;
+            }
+          }
+        }
+
+        &:not(:first-of-type){
+          td{
+            border-top: none;
+          }
+        }
+
+        &.title{
+          background: rgba(0,0,0,.7) !important;
+          color: #fff;
+          font-weight: bold;
+          text-transform: uppercase;
+        }
+      }
+
+      &.zebra{
+        tr{
+          &:nth-child(odd){
+            background: rgba(0,0,0,.1);
+          }
+        }
+      }
+
+      &.hover{
+        tr:not(.title){
+          &:not(.action_line){
+            &:hover{
+              background: #2b92db;
+              color: #fff;
+            }
+          }
+        }
+      }
+
+      tr.action_line{
+        background: #2d442f !important;
+
+        td{
+          &,*{
+            color: #fff;
+          }
+
+          input{
+            background: rgba(255,255,255,.02) ;
+            border: 1px solid rgba(255,255,255,.04);
+            margin: .1em -.35em;
+            padding: .5em;
+            color: #fff;
+            font-weight: bold;
+
+            @include border-radius(.25em);
+          }
+        }
+      }
+    }
+  }
+
+  div.wrap{
+    > .requisits{
+      margin: 2em 3em;
+      background: #eee;
+      border: 1px solid #ccc;
+      padding: 1em;
+
+      > div{
+        padding: .3em;
+        padding-left: 3.5em;
+        padding-top: .5em;
+        margin: .3em 0;
+        border: 1px solid #ddd;
+        line-height: 1.5em;
+
+        background: rgba(255, 0, 0, .1);
+
+        &:before{
+          font-family:"Font Awesome 5 Free";
+          -moz-osx-font-smoothing:grayscale;
+          -webkit-font-smoothing:antialiased;
+          font-style:normal;
+          font-variant:normal;
+          text-rendering:auto;line-height:1;
+          font-weight: 900;
+
+          display: block;
+          position: absolute;
+
+          margin: 0;
+          padding: 0;
+          margin-left: -1.8em;
+
+          font-size: 1.5em;
+          line-height: .96em;
+
+          color: red;
+          vertical-align: middle;
+
+          content: "\f071";
+        }
+
+        &.existe{
+          background: none;
+
+          &:before{
+            content:"\f058";
+            color: #00ca00;
+          }
+        }
+      }
+    }
+
+    &.jcem_wpAdmin{
+      .form,
+      div.form{
+        > h2{
+          display: block;
+          border-bottom: 1px solid #aaa;
+        }
+
+        > div.info{
+          margin-bottom: 2em;
+          text-align: justify;
+        }
+
+
+
+        &,
+        form,
+        > form{
+          &.fields,
+          .fields,
+          > div.fields {
+            > .subgroup{
+              background: rgba(255,255,255,.4) !important;
+              padding: .05rem .5rem !important;
+              border: 1px solid rgba(0,0,0,.1);
+              margin-bottom: .7rem;
+              line-height: .2rem;
+            }
+
+            line-height: 2em;
+            column-gap: 1.5em;
+
+            @media screen and (min-width: 641px) {
+              column-count: 2;
+            }
+
+            @media screen and (min-width: 1200px) {
+              column-count: 3;
+            }
+
+            @media screen and (max-width: 640px) {
+              column-count: 1;
+            }
+
+            &,.subgroup{
+              > *{
+                /* https://stackoverflow.com/questions/26854095/stop-css3-columns-breaking-paragraphs-up */
+                page-break-inside: avoid; /* For Firefox. */
+                -webkit-column-break-inside: avoid; /* For Chrome & friends. */
+                break-inside: avoid; /* For standard browsers like IE. :-) */
+              }
+              
+              > div.input{
+                line-height: 1.85em;
+                overflow: hidden;
+                min-height: 2.3em;
+
+                //min-width: 99%;
+                padding: 0;
+                margin: .5em 0;
+
+                border: 1px solid #cfcfcf;
+
+                &:first-of-type{
+                  margin-top: 0;
+                }
+
+                &:after{
+                  clear: both;
+                }
+
+                &:before{
+                  font-family:"Font Awesome 5 Free";
+                  -moz-osx-font-smoothing:grayscale;
+                  -webkit-font-smoothing:antialiased;
+                  font-style:normal;
+                  font-variant:normal;
+                  text-rendering:auto;line-height:1;
+                  font-weight:900;
+
+                  display: block;
+
+                  position: absolute;
+
+                  margin: 0;
+                  padding: 0;
+
+                  padding-left: .5em;
+                  padding-top: .15em;
+
+                  font-size: 1.5em;
+                  line-height: 1.9em;
+
+                  color: #555;
+                  vertical-align: middle;
+
+                  content: "\f059";
+                }
+
+                &.post_type{
+                  &.post,
+                  &.page{
+                    background: #ffffe6;
+                  }
+                }
+
+                &.social{
+                  &:before{
+                    font-family: "Font Awesome 5 Brands";
+                  }
+                }
+
+                > button,
+                > .button{
+                  float: right;
+
+                  width: 2.4em;
+                  height: 2.3em;
+
+                  z-index: 1000 !important;
+
+                  margin-top: .25em;
+                  margin-right: .2em;
+                  margin-bottom: -100%;
+
+                  text-align: center;
+
+                  padding: 0;
+                  background: #eee;
+                  border: 1px solid #ddd;
+
+                  &:hover{
+                    background: #ccc;
+                    border-color: #bbb;
+                  }
+
+                  &:focus{
+                    border-color: red;
+                  }
+
+                  &:first-child{
+                    margin-right: 2.75em;
+                  }
+
+                  &:before{
+                    font-family:"Font Awesome 5 Free";
+                    -moz-osx-font-smoothing:grayscale;
+                    -webkit-font-smoothing:antialiased;
+                    font-style:normal;
+                    font-variant:normal;
+                    text-rendering:auto;line-height:1;
+                    font-weight:900;
+
+                    display: block;
+
+                    margin: 0;
+                    padding: 0;
+
+                    font-size: 1.5em;
+                    line-height: 1.3em;
+
+                    color: #888;
+                    vertical-align: middle;
+                  }
+
+                  &.upload:before{
+                    content: "\f093";
+                  }
+
+                  &.open{
+                    display: none;
+                    &:before{
+                      content: "\f07c";
+                    }
+                  }
+                }
+
+                > textarea,
+                > select,
+                > input{
+                  padding: .5em .7em;
+                  padding-left: 3.3em;
+                  display: block !important;
+                  width: 100%;
+                  border: none !important;
+
+                  &[type=checkbox],&[type=radio]{
+                    width: auto;
+                    max-height: 90%;
+                    display: inline-block !important;
+                    margin: 0;
+                    padding: 0;
+                  }
+
+                  &:focus{
+                    background: #f5f5f5;
+                  }
+                }
+                
+                > select{
+                  padding-bottom: .4em;
+                  padding-right: 2.5em;
+                }
+
+                > .button + input,
+                > button + input,
+                > .button + select,
+                > button + select{
+                  width: calc(100% - 2.9em);
+                  padding-right: 1em;
+                  z-index: -1;
+                }
+
+                &.color{
+                  > input{
+                    float: right;
+                    width: 3.5em;
+                    min-height: 2.1em !important;
+                    padding: 0;
+                    margin: .2em;
+                    @include border-radius(.7em);
+                  }
+
+                  > label{
+                    color: #777;
+                    font-weight: normal;
+
+                    display: block;
+                    position: relative;
+                    margin: 0;
+                    margin-left: 3.3em;
+                    line-height: 2.5em;
+
+                    overflow: hidden;
+                    margin-right: 4.5em;
+                  }
+                }
+
+                &.checkbox, &.radio{
+                  position: relative;
+                  padding: .39em;
+                  padding-left: 2.3em;
+                  cursor: pointer;
+                  overflow-x: hidden;
+
+                  -webkit-user-select: none;
+                  -moz-user-select: none;
+                  -ms-user-select: none;
+
+                  user-select: none;
+
+                  &:before{
+                    content: "";
+                  }
+
+                  > label{
+                    padding:0;
+                    margin:0;
+                    margin-left: .4em;
+                    padding-bottom: .2em;
+                  }
+
+                  > input[type=radio],
+                  > input[type=checkbox]{
+                    display: block !important;
+                    position: absolute;
+                    opacity: 0;
+                    left: 0;
+                    top: 0;
+                    bottom: 0;
+                    cursor: pointer;
+                    height: 99%;
+                    width: 99%;
+                    z-index: +1;
+                  }
+
+                  > .checkmark{
+                    position: absolute;
+                    top: .55em;
+                    left: .3em;
+                    height: 1.8em;
+                    width: 1.8em;
+                    background-color: #ddd;
+                    border: .1em solid #ccc;
+                  }
+
+                  &:hover{
+                    > input ~.checkmark{
+                      background-color: #ccc;
+                      border-color: #2b92db !important;
+                    }
+                  }
+
+                  > input:checked ~.checkmark{
+                    background-color: #2196F3;
+                    border-color: #2196F3;
+
+                    &:after{
+                      content: " ";
+                      position: absolute;
+                      display: block;
+                    }
+                  }
+                }
+
+                // https://www.w3schools.com/howto/howto_css_custom_checkbox.asp
+                &.checkbox{
+                  > input:checked ~.checkmark{
+                    &:after{
+                      content: " ";
+                      position: absolute;
+                      display: block;
+
+                      left: .55em;
+                      top: .2em;
+                      width: .55em;
+                      height: 1.05em;
+                      border: solid white;
+                      border-width: 0 3px 3px 0;
+                      -webkit-transform: rotate(45deg);
+                      -ms-transform: rotate(45deg);
+                      transform: rotate(45deg);
+                    }
+                  }
+                }
+
+                &.radio{
+                  > input ~.checkmark{
+                    border-radius: 50%;
+                  }
+
+                  > input:checked ~.checkmark{
+                    &:after{
+                      left: 31%;
+                      top: 31%;
+                      width: 40%;
+                      height: 40%;
+                      border-radius: 50%;
+                      background: white;
+                    }
+                  }
+                }
+
+                &.image,
+                &.imagem,
+                &.stiny_logotipoimage,
+                &.favicon{
+                  &:before{
+                    content: "\f03e";
+                  }
+                }
+
+                &.color{
+                  &:before{
+                    content: "\f53f";
+                  }
+                }
+
+                &.link:before,
+                  &.url_raiz_para_icones:before{
+                  content: "\f0c1";
+                }
+
+                &.stiny_advertencia:before{
+                  content: "\f27a";
+                }
+                &.stiny_aboutme:before{
+                  content: "\f2bd";
+                  font-family:"Font Awesome 5 Free";
+                  font-weight:900;
+                }
+
+                &.stiny_github:before{
+                  content: "\f09b";
+                }
+
+                &.stiny_facebook:before{
+                  content: "\f09a";
+                }
+
+                &.stiny_twitter:before{
+                  content: "\f099";
+                }
+
+                &.stiny_linkedin:before{
+                  content: "\f08c";
+                }
+
+                &.stiny_flickr:before{
+                  content: "\f16e";
+                }
+
+                &.stiny_youtube:before{
+                  content: "\f167";
+                }
+
+                &.stiny_instagram:before{
+                  content: "\f16d";
+                }
+
+                &.stiny_pinterest:before{
+                  content: "\f0d3";
+                }
+
+                &.stiny_reddit:before{
+                  content: "\f1a2";
+                }
+
+                &.stiny_vimeo:before{
+                  content: "\f27d";
+                }
+
+                &.stiny_tumblr:before{
+                  content: "\f174";
+                }
+              }
+
+            }
+          }
+        }
+      }
+    }
+  }
+}
