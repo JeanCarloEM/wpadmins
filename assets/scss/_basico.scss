@@ -1,0 +1,105 @@
+body,*{
+  @extend .fontpadrao;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  @include box-sizing(border-box);  
+}
+
+html, body{
+  height: 100%;
+  min-height: 100%;
+  min-width: 320px;
+  background: $bkGeral;
+}
+
+header, nav, aside, article, section, footer{
+  display: block;
+}
+
+h1,h2,h3,h4,h5,h6,h7{
+  display: block;
+  border-bottom: 1px solid $cor_under_titulo;
+  text-align: left;
+  line-height: 1.25em;
+  
+  margin: 0;
+  margin-top: 1.2em;
+  margin-bottom: .7em;
+  
+  &,*{
+    text-align: left !important;
+  }
+}
+
+html{
+  height: 100%;
+  
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;  
+}
+
+html.cover{
+  &,body{
+    max-width: 828px;
+    max-height: 315px;
+  }
+}
+
+html,#about{
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.clearfix {
+  @include clearfix;
+}
+
+.tipsy{
+  white-space: nowrap;
+  @include box-sizing(content-box);
+  font-size: .9em;
+  margin-top: -$barraEsquerdaFechada;
+  font-weight: bold;
+
+  &,
+  .tipsy-inner{
+    border-color: #000 !important;
+  }
+}
+
+.ie11 body{
+  display: none;
+}
+
+textarea:focus, input[type="text"], input[type="search"]{
+  outline: 0;
+}
+
+.ocultarscroll{
+  &::-webkit-scrollbar { 
+    width: 0 !important;
+    height: 0 !important;
+  }
+  
+  -ms-overflow-style: none;
+  
+  overflow: -moz-scrollbars-none;
+}
+
+.exibir,
+.ocultar{
+  @include transition(.5s, 0s);
+}
+
+.exibir{
+  @include opacity(100, true);  
+}
+
+.ocultar{
+  @include opacity(0, true);  
+}

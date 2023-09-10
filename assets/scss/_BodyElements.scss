@@ -1,0 +1,136 @@
+.fontpadrao{
+  font-family: $font;
+  line-height: 1 + $AlturaLinhaAMais;
+  font-size: $font-size;
+  color: $cor_texto;
+  line-height: 1.3em;
+  text-align: justify;
+}
+
+.bold,
+b{
+  &,*{
+    font-weight: bold;
+  }
+}
+
+.italic,
+i{
+  &,*{
+    font-style: italic;
+  }
+}
+
+.sublinhado
+u{
+  &,*{
+    text-decoration: underline;
+  }
+}
+
+@for $i from 1 through 7 {
+  h#{$i} {
+    @include tmhTexto( ( 7 - $i ) /10 );
+  }
+}
+
+.sublinhatoFull{
+  width: 100%;
+  display: inline-block;
+  border-bottom: 1px solid $cor_sublinhado;
+}
+
+p{
+  @extend .align_justify;
+
+  white-space: normal;
+
+  display: block;   
+  padding: 0;
+  margin: .25em 0;   
+
+  text-indent: 3em;
+
+  &.small{
+    font-size: .75em;
+  }  
+}
+
+a{
+  text-decoration: none;
+  background: none;
+  color: $cor_link;
+
+  &:not(.nosimbol){
+    &:after{
+      line-height: .9em;
+      font: normal normal normal .9em FontAwesome;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+
+      content: "\f08e";
+      color: $cor_link_simbol;
+      margin-left: .3em;
+    }
+  }
+
+  &:visited{
+    color: $cor_link_visitado;
+  }
+
+  &:active{
+    color: $cor_link_active;
+  }
+
+  &:hover,&:active{
+    text-decoration: underline;
+    color: $cor_link_over;
+  }
+}
+
+.align_left{
+  &,*{
+    text-align: left !important;
+  }
+}
+
+.align_right{
+  &,*{
+    text-align: right !important;
+  }
+}
+
+.align_center{
+  &,*{
+    text-align: center !important;
+  }
+}
+
+.align_justify{
+  &,*{
+    text-align: justify !important;
+  }
+}
+
+span.big,
+big{
+  &,*{
+    font-size: 1.2em;
+  }
+}
+
+span.small,
+small{
+  &,*{
+    font-size: .8em;
+  }
+}
+
+sub,
+sup{
+  &,*{
+    font-size: .60em;
+    margin-left:.50em;
+  }
+}

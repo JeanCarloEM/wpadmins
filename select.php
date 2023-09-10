@@ -264,7 +264,7 @@ abstract class select
               $fmime = explode(';', $fmime);
 
               foreach ($fmime as $mk => $inds) {
-                if (strpos($fmime, 'image') !== false) {
+                if (strpos($inds, 'image') !== false) {
                   $fmime = $inds;
                   break;
                 }

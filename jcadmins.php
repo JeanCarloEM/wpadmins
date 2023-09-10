@@ -12,6 +12,7 @@
 require_once __DIR__ . DIRECTORY_SEPARATOR . '.admin.php';
 require_once __DIR__ . DIRECTORY_SEPARATOR . 'select.php';
 require_once __DIR__ . DIRECTORY_SEPARATOR . 'thumbs.php';
+require_once __DIR__ . DIRECTORY_SEPARATOR . 'multiple-thumbnails-editor.php';
 
 add_action('admin_enqueue_scripts', function() {
   wp_enqueue_style('jcadmins_css', \plugins_url('jcadmins') . '/assets/css/admin.css');

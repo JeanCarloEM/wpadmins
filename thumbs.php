@@ -183,7 +183,7 @@ if (!class_exists('dthumb')) {
 
         # DESREGISTRA O REGISTRO DE POSTS REGISTRADOS
         \unregister_setting(self::PREFIX, self::registeredTypeField);
-        \unregister_setting($site->blog_id, static::getVarName('global'));
+        \unregister_setting(self::PREFIX, static::getVarName('global'));
       }
     }
 
@@ -285,7 +285,7 @@ if (!class_exists('dthumb')) {
      *
      */
 
-    static function dthumb_plugin_admin_page()
+    static function dthumb_plugin_admin_page($index)
     {
       static::buildPageAdnBox(static::getOptions()[is_numeric($index) ? $index : 0]['forms']);
     }
